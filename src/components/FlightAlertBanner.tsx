@@ -13,7 +13,7 @@ export default function FlightAlertBanner() {
             Uçuşunuzu Asla Riske Atmayın!
           </h2>
           <p className="text-sm mt-1 text-on-primary-fixed/90 font-medium leading-relaxed">
-            Havalimanına gidişlerde uçuş saatinizden en az <strong>2 saat önce</strong> taksi rezervasyonu yaptırmanızı öneririz. Uçuş saatinizi ve adresinizi iletin; güzergah trafiğini sizin yerinize planlayalım.
+            Havaalanına gidişlerde uçuş saatinizden en az <strong>2 saat önce</strong> taksi rezervasyonu yaptırmanızı öneririz. Uçuş saatinizi ve adresinizi iletin; güzergah trafiğini sizin yerinize planlayalım.
           </p>
         </div>
       </div>

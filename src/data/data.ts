@@ -1,9 +1,7 @@
 /**
- * KAHRAMANMARAŞ HAVALİMANI TAKSİ - MERKEZİ VERİ & SEO YAPILANDIRMASI
+ * KAHRAMANMARAŞ HAVAALANI TAKSİ - MERKEZİ VERİ & SEO YAPILANDIRMASI
  * 
- * Bu dosyadan sitenin tüm iletişim numaralarını, WhatsApp mesajlarını,
- * Google Maps/Place ID ayarlarını, SEO bilgilerini ve içeriklerini
- * tek bir yerden kolayca düzenleyebilirsiniz.
+ * İşletme Resmi Adı: "Kahramanmaraş Havaalanı Taksi"
  */
 
 export interface VehicleSpec {
@@ -30,15 +28,15 @@ export interface FaqItem {
 export const siteData = {
   // 1. KURUMSAL VE GENEL BİLGİLER
   brand: {
-    name: "Kahramanmaraş Havalimanı Taksi",
-    shortName: "KCM Havalimanı Taksi",
+    name: "Kahramanmaraş Havaalanı Taksi",
+    shortName: "KCM Havaalanı Taksi",
     title: "Taksi Karşılama",
-    slogan: "Havalimanındaki Tek Resmi Taksi Durağı",
+    slogan: "Havaalanındaki Tek Resmi Taksi Durağı",
     license: "DHMİ & Kahramanmaraş Büyükşehir Belediyesi UKOME Lisanslı",
-    airportName: "Kahramanmaraş Havalimanı",
+    airportName: "Kahramanmaraş Havaalanı",
     airportIata: "KCM",
     airportIcao: "LTCN",
-    legalName: "Kahramanmaraş Havalimanı Taksi Motorlu Taşıyıcılar Kooperatifi",
+    legalName: "Kahramanmaraş Havaalanı Taksi Motorlu Taşıyıcılar Kooperatifi",
     yearEstablished: 1998,
   },
 
@@ -58,10 +56,10 @@ export const siteData = {
     whatsappNumber: "905420004646",
     whatsappLink: "https://wa.me/905420004646",
     whatsappDefaultText:
-      "Merhaba Kahramanmaraş Havalimanı Taksi, taksi rezervasyonu ve karşılama hakkında bilgi almak istiyorum.",
+      "Merhaba Kahramanmaraş Havaalanı Taksi, taksi rezervasyonu ve karşılama hakkında bilgi almak istiyorum.",
 
     // E-posta
-    email: "info@marashavalimanitaksi.com",
+    email: "info@marashavaalanitaksi.com",
 
     // Çalışma Saatleri
     workingHours: "7/24 Kesintisiz (Tüm Uçuşlar ve Gece İnişleri Dahil)",
@@ -70,7 +68,7 @@ export const siteData = {
 
   // 3. KONUM, GOOGLE MAPS & HARİTA VERİLERİ (Geo SEO)
   location: {
-    address: "Kahramanmaraş Havalimanı Gelen Yolcu Terminal Çıkışı",
+    address: "Kahramanmaraş Havaalanı Gelen Yolcu Terminal Çıkışı",
     district: "Dulkadiroğlu",
     city: "Kahramanmaraş",
     province: "Kahramanmaraş",
@@ -89,7 +87,7 @@ export const siteData = {
 
     // Google Maps Doğrudan Arama / Yol Tarifi Linki
     googleMapsLink:
-      "https://maps.google.com/?q=Kahramanmara%C5%9F+Havaliman%C4%B1+Taksi+Dura%C4%9F%C4%B1",
+      "https://maps.google.com/?q=Kahramanmara%C5%9F+Havaalan%C4%B1+Taksi+Dura%C4%9F%C4%B1",
 
     // Google Maps Harita Gömme (Embed Iframe) URL'si
     googleMapsEmbedUrl:
@@ -101,24 +99,26 @@ export const siteData = {
 
   // 4. GELİŞMİŞ SEO VE SOSYAL MEDYA BİLGİLERİ
   seo: {
-    siteUrl: "https://www.marashavalimanitaksi.com",
-    title: "Kahramanmaraş Havalimanı Taksi | 7/24 Kesintisiz Resmi Havalimanı Transferi",
-    titleTemplate: "%s | Kahramanmaraş Havalimanı Resmi Taksi Durağı",
+    siteUrl: "https://www.marashavaalanitaksi.com",
+    title: "Kahramanmaraş Havaalanı Taksi | 7/24 Kesintisiz Resmi Havaalanı Transferi",
+    titleTemplate: "%s | Kahramanmaraş Havaalanı Resmi Taksi Durağı",
     description:
-      "Kahramanmaraş Havalimanı (KCM) tek resmi ve lisanslı taksi durağı. Gelen yolcu çıkış kapısında 7/24 hazır taksiler. Onikişubat, Dulkadiroğlu, Türkoğlu, Pazarcık, Elbistan ve şehirlerarası sabit, güvenilir taksi transferi.",
+      "Kahramanmaraş Havaalanı (KCM) tek resmi ve lisanslı taksi durağı. Gelen yolcu çıkış kapısında 7/24 hazır taksiler. Onikişubat, Dulkadiroğlu, Türkoğlu, Pazarcık, Elbistan ve şehirlerarası sabit, güvenilir taksi transferi.",
     keywords: [
+      "Kahramanmaraş Havaalanı Taksi",
       "Kahramanmaraş Havalimanı Taksi",
-      "Maraş Havalimanı Taksi Durağı",
-      "KCM Havalimanı Taksi",
-      "Kahramanmaraş Havalimanı Transfer",
+      "Maraş Havaalanı Taksi Durağı",
+      "KCM Havaalanı Taksi",
+      "Kahramanmaraş Havaalanı Transfer",
       "Maraş Taksi",
       "Kahramanmaraş Taksi Numarası",
+      "Havaalanı Taksi Çağır",
       "Havalimanı Taksi Çağır",
-      "Elbistan Havalimanı Transfer",
-      "Türkoğlu Havalimanı Taksi",
+      "Elbistan Havaalanı Transfer",
+      "Türkoğlu Havaalanı Taksi",
       "Dulkadiroğlu Taksi",
-      "Onikişubat Havalimanı Taksi",
-      "7 24 Havalimanı Taksi Maraş",
+      "Onikişubat Havaalanı Taksi",
+      "7 24 Havaalanı Taksi Maraş",
     ],
     themeColor: "#facc15",
     ogImage:
@@ -135,7 +135,7 @@ export const siteData = {
   vehicleSpecs: {
     title: "Araç Özellikleri & Kapasite Standartları",
     subtitle:
-      "Havalimanı resmi taksilerimiz yolcularımızın konforu, bagaj güvenliği ve dakik ulaşımı için standart donanımlara sahiptir.",
+      "Havaalanı resmi taksilerimiz yolcularımızın konforu, bagaj güvenliği ve dakik ulaşımı için standart donanımlara sahiptir.",
     passengerCapacity: "Azami 4 Yolcu",
     luggageCapacity: "3-4 Büyük Boy Valiz + El Çantaları",
     specs: [
@@ -241,7 +241,7 @@ export const siteData = {
   // 8. SIKÇA SORULAN SORULAR
   faqs: [
     {
-      q: "Kahramanmaraş Havalimanında her zaman hazır taksi var mı?",
+      q: "Kahramanmaraş Havaalanında her zaman hazır taksi var mı?",
       a: "Evet, tarifeli tüm iç hat iniş saatlerinde resmi durağımızda sırayla araçlarımız beklemektedir. Uçaktan iner inmez taksinize hemen binebilirsiniz.",
     },
     {
@@ -257,7 +257,7 @@ export const siteData = {
       a: "Önceden rezervasyon yapıp uçuş kodunuzu ilettiyseniz, uçağınızın teker koyduğu ana kadar rötar durumunu sistemden takip ederiz. Bekleme için hiçbir ek ücret alınmaz.",
     },
     {
-      q: "Havalimanına gitmek için nasıl taksi çağırırım?",
+      q: "Havaalanına gitmek için nasıl taksi çağırırım?",
       a: "Telefonla doğrudan 0344 235 46 46 numarasını arayabilir veya sitemizdeki hızlı rezervasyon formu / WhatsApp üzerinden adres ve saat bilgisi göndererek ön rezervasyon oluşturabilirsiniz. Şoförümüz tam vaktinde kapınızda olur.",
     },
   ] as FaqItem[],
@@ -282,7 +282,7 @@ export const siteData = {
     {
       icon: "luggage",
       title: "Bagaj Yardımı",
-      desc: "Geniş bagajlı sedan ve kalabalık aileler için VIP Vito araç seçenekleri.",
+      desc: "Geniş bagajlı sedan ve aileler için ferah bagajlı araç seçenekleri.",
     },
     {
       icon: "nest_clock_farsight_analog",

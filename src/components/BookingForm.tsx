@@ -44,10 +44,10 @@ export default function BookingForm() {
 
     const directionText =
       direction === "from"
-        ? "Havalimanından Gidiş (Terminalden Alış)"
-        : "Havalimanına Gidiş (Adresten Havalimanına)";
+        ? "Havaalanından Gidiş (Terminalden Alış)"
+        : "Havaalanına Gidiş (Adresten Havaalanına)";
 
-    const message = `Merhaba ${siteData.brand.name} Durağı,\n\nRezervasyon Talebim:\n• Yön: ${directionText}\n• Adres/Hedef: ${location || "Belirtilmedi"}\n• Tarih & Saat: ${date} ${time}\n• Yolcu/Araç: ${passengers}\n• Uçuş No: ${flightNumber || "-"}\n\nBilgi ve onayınızı rica ederim.`;
+    const message = `Merhaba ${siteData.brand.name} Durağı,\n\nRezervasyon Talebim:\n• Yön: ${directionText}\n• Adres/Hedef: ${location || "Belirtilmedi"}\n• Tarih & Saat: ${date} ${time}\n• Yolcu Sayısı: ${passengers}\n• Uçuş No: ${flightNumber || "-"}\n\nBilgi ve onayınızı rica ederim.`;
 
     const encoded = encodeURIComponent(message);
     window.open(`${siteData.contact.whatsappLink}?text=${encoded}`, "_blank");
@@ -89,7 +89,7 @@ export default function BookingForm() {
               : "text-secondary hover:text-on-surface"
           }`}
         >
-          Havalimanından
+          Havaalanından
         </button>
         <button
           type="button"
@@ -100,7 +100,7 @@ export default function BookingForm() {
               : "text-secondary hover:text-on-surface"
           }`}
         >
-          Havalimanına
+          Havaalanına
         </button>
       </div>
 
@@ -193,7 +193,7 @@ export default function BookingForm() {
               htmlFor="passengers"
               className="text-xs font-bold text-on-surface-variant"
             >
-              Kişi / Araç Tipi
+              Yolcu Sayısı
             </label>
             <select
               id="passengers"
@@ -202,9 +202,7 @@ export default function BookingForm() {
               className="w-full h-11 px-3 rounded-xl bg-surface-container text-on-surface text-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/40 border border-transparent focus:border-primary/20 cursor-pointer"
             >
               <option value="1-2 Kişi (Standart)">1-2 Kişi (Standart)</option>
-              <option value="3-4 Kişi (Sedan)">3-4 Kişi (Sedan)</option>
-              <option value="Geniş Bagajlı Sedan">Geniş Bagajlı Sedan</option>
-              <option value="Geniş Bagaj / VIP Vito">Minibüs / VIP Vito</option>
+              <option value="3-4 Kişi (Standart)">3-4 Kişi (Standart)</option>
             </select>
           </div>
           <div className="flex flex-col gap-1.5">

@@ -35,7 +35,7 @@ export default function Hero() {
               {siteData.brand.name}
             </h1>
             <p className="text-sm sm:text-base lg:text-lg text-surface-variant font-normal leading-relaxed">
-              Terminal gelen yolcu kapısında sizi bekliyoruz. Havalimanına ve havalimanından tüm ilçe ve otellere 7/24 kesintisiz, güvenli ve konforlu transfer hizmeti.
+              Terminal gelen yolcu kapısında sizi bekliyoruz. Havaalanına ve havaalanından tüm ilçe ve otellere 7/24 kesintisiz, güvenli ve konforlu transfer hizmeti.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export default function Hero() {
                 <span className="material-symbols-outlined text-[18px] text-primary-container">directions_car</span>
                 Hazır Araç Tipi
               </span>
-              <span className="font-bold text-white text-right">Sedan & VIP Vito</span>
+              <span className="font-bold text-white text-right">Standart Sarı Taksi</span>
             </div>
 
             <div className="flex items-center justify-between py-1">

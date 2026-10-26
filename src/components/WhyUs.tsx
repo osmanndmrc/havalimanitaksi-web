@@ -10,7 +10,7 @@ export default function WhyUs() {
             Güven & Kurumsal Standart
           </span>
           <h2 className="text-xl sm:text-2xl font-bold text-on-surface">
-            Neden Havalimanı Resmi Taksisi?
+            Neden Havaalanı Resmi Taksisi?
           </h2>
         </div>
         <span className="text-xs text-secondary hidden sm:block">
