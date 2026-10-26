@@ -27,18 +27,15 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav aria-label="Ana Menü" className="hidden xl:flex items-center gap-1 text-sm font-semibold text-secondary whitespace-nowrap">
+        <nav aria-label="Ana Menü" className="hidden lg:flex items-center gap-1 text-sm font-semibold text-secondary whitespace-nowrap">
           <a href="#rezervasyon" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
             Hızlı Rezervasyon
           </a>
-          <a href="#guzergahlar" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
-            Güzergahlar
+          <a href="#arac-ozellikleri" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
+            Araç Özellikleri
           </a>
           <a href="#nerede" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
             Durağımız Nerede?
-          </a>
-          <a href="#filo" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
-            Araç Filosu
           </a>
           <a href="#avantajlar" className="px-3 py-1.5 rounded-lg hover:text-primary hover:bg-surface-container transition-all">
             Neden Biz?
@@ -77,7 +74,7 @@ export default function Header() {
         </div>
 
         {/* Mobile / Tablet Menu Button */}
-        <div className="flex xl:hidden items-center gap-2 shrink-0">
+        <div className="flex lg:hidden items-center gap-2 shrink-0">
           <a
             aria-label={`Hızlı Çağrı Merkezi: ${siteData.contact.phoneLandline}`}
             className="md:hidden w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed active:scale-95 transition-transform shadow-[0_4px_12px_-2px_rgba(250,204,21,0.4)]"
@@ -101,7 +98,7 @@ export default function Header() {
 
       {/* Mobile & Tablet Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden border-t border-surface-container bg-surface/98 backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden border-t border-surface-container bg-surface/98 backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
           <nav aria-label="Mobil Menü" className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1.5">
             <a
               href="#rezervasyon"
@@ -112,12 +109,12 @@ export default function Header() {
               Hızlı Rezervasyon
             </a>
             <a
-              href="#guzergahlar"
+              href="#arac-ozellikleri"
               onClick={() => setMobileMenuOpen(false)}
               className="px-3.5 py-2.5 rounded-xl text-on-surface font-semibold hover:bg-surface-container flex items-center gap-2.5"
             >
-              <span className="material-symbols-outlined text-[20px] text-primary">alt_route</span>
-              Hizmet Güzergahlarımız
+              <span className="material-symbols-outlined text-[20px] text-primary">directions_car</span>
+              Araç Özellikleri
             </a>
             <a
               href="#nerede"
@@ -126,14 +123,6 @@ export default function Header() {
             >
               <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
               Durağımız Nerede?
-            </a>
-            <a
-              href="#filo"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-xl text-on-surface font-semibold hover:bg-surface-container flex items-center gap-2.5"
-            >
-              <span className="material-symbols-outlined text-[20px] text-primary">directions_car</span>
-              Araç Filomuz
             </a>
             <a
               href="#avantajlar"

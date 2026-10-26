@@ -6,21 +6,10 @@
  * tek bir yerden kolayca düzenleyebilirsiniz.
  */
 
-export interface RouteData {
-  destination: string;
-  badge: string;
-  distance: string;
-  duration: string;
-  description: string;
-  queryText: string;
-}
-
-export interface FleetItem {
-  type: string;
-  badge: string;
-  capacity: string;
-  luggage: string;
-  features: string[];
+export interface VehicleSpec {
+  icon: string;
+  title: string;
+  value: string;
   desc: string;
 }
 
@@ -53,7 +42,7 @@ export const siteData = {
     yearEstablished: 1998,
   },
 
-  // 2. İLETİŞİM VE ÇAĞRI BİLGİLERİ (Tek yerden güncelleyin)
+  // 2. İLETİŞİM VE ÇAĞRI BİLGİLERİ
   contact: {
     // Sabit Hat / Durak Nöbetçi Telefonu
     phoneLandline: "0344 235 46 46",
@@ -75,7 +64,7 @@ export const siteData = {
     email: "info@marashavalimanitaksi.com",
 
     // Çalışma Saatleri
-    workingHours: "7/24 Kesintisiz (Tüm Tarifeli ve Rötar Uçuşlar Dahil)",
+    workingHours: "7/24 Kesintisiz (Tüm Uçuşlar ve Gece İnişleri Dahil)",
     workingHoursSpecification: "Mo-Su 00:00-24:00",
   },
 
@@ -89,13 +78,13 @@ export const siteData = {
     country: "Türkiye",
     countryCode: "TR",
 
-    // Coğrafi Koordinatlar (GeoDaddy ve Google Maps için tam terminal koordinatı)
+    // Coğrafi Koordinatlar
     latitude: 37.5386,
     longitude: 36.9744,
     geoRegion: "TR-46",
     geoPlacename: "Kahramanmaraş",
 
-    // Google Place ID (Google Business Profile ID'nizi buraya girebilirsiniz)
+    // Google Place ID
     googlePlaceId: "ChIJ1ZgK6_d9NBER4y9eU-Q3q50",
 
     // Google Maps Doğrudan Arama / Yol Tarifi Linki
@@ -132,7 +121,8 @@ export const siteData = {
       "7 24 Havalimanı Taksi Maraş",
     ],
     themeColor: "#facc15",
-    ogImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuB_lBQqkXjDCQ0tWWCLL7gL3SB4SXNvapr5-LBphTub7bTz3yFAybadOinQ9qiHQHiJ_57RjYtVsMCoEPfePa5Qrqn8MCe_IfFkUvVPJq8qh0x6UO6S4MsOcLuw6_1SFHpqnVNRF0LLoQ5ERw5N_w1nAogn4uLmGEtWlfrhoJixLdopVzA6sq3DvsIIuC6fkVs7NTUVhZHnEJJ98g0serWtsL8KaKoObGqXDyAr9pI_4G2JOyOXQclQ",
+    ogImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuB_lBQqkXjDCQ0tWWCLL7gL3SB4SXNvapr5-LBphTub7bTz3yFAybadOinQ9qiHQHiJ_57RjYtVsMCoEPfePa5Qrqn8MCe_IfFkUvVPJq8qh0x6UO6S4MsOcLuw6_1SFHpqnVNRF0LLoQ5ERw5N_w1nAogn4uLmGEtWlfrhoJixLdopVzA6sq3DvsIIuC6fkVs7NTUVhZHnEJJ98g0serWtsL8KaKoObGqXDyAr9pI_4G2JOyOXQclQ",
     rating: {
       ratingValue: "4.9",
       bestRating: "5",
@@ -141,7 +131,66 @@ export const siteData = {
     },
   },
 
-  // 5. HİZMET VERİLEN TÜM İLÇE VE BÖLGELER
+  // 5. ARAÇ ÖZELLİKLERİ VE KAPASİTE STANDARTLARI (Global Bilgilendirme)
+  vehicleSpecs: {
+    title: "Araç Özellikleri & Kapasite Standartları",
+    subtitle:
+      "Havalimanı resmi taksilerimiz yolcularımızın konforu, bagaj güvenliği ve dakik ulaşımı için standart donanımlara sahiptir.",
+    passengerCapacity: "Azami 4 Yolcu",
+    luggageCapacity: "3-4 Büyük Boy Valiz + El Çantaları",
+    specs: [
+      {
+        icon: "groups",
+        title: "Yolcu Kapasitesi",
+        value: "4 Kişilik Standart",
+        desc: "Yasal taşıma mevzuatına uygun, 4 yetişkin yolcuya kadar ferah oturma alanı.",
+      },
+      {
+        icon: "luggage",
+        title: "Bagaj Hacmi",
+        value: "3-4 Büyük Valiz",
+        desc: "Geniş sedan bagajı; büyük boy valizler, kabin boy çantalar ve bebek arabaları için uygundur.",
+      },
+      {
+        icon: "ac_unit",
+        title: "Klima & Havalandırma",
+        value: "4 Mevsim İklimlendirme",
+        desc: "Yazın serin, kışın sıcacık, düzenli bakımı yapılan hijyenik hava filtreleri.",
+      },
+      {
+        icon: "credit_card",
+        title: "Araçta Kartla Ödeme",
+        value: "Temassız POS Cihazı",
+        desc: "Tüm banka ve kredi kartları ile araç içinde komisyonsuz, güvenli temassız ödeme.",
+      },
+      {
+        icon: "child_care",
+        title: "Çocuk / Bebek Koltuğu",
+        value: "Önceden Talep Üzerine",
+        desc: "Rezervasyon esnasında belirttiğiniz takdirde bebek veya çocuk oto koltuğu hazır bulundurulur.",
+      },
+      {
+        icon: "speed",
+        title: "Resmi Taksimetre",
+        value: "UKOME Onaylı & Mühürlü",
+        desc: "Sürpriz fiyat yok; Kahramanmaraş Büyükşehir Belediyesi resmi taksimetresi uygulanır.",
+      },
+      {
+        icon: "sanitizer",
+        title: "Hijyen & Temizlik",
+        value: "Düzenli Dezenfekte",
+        desc: "Her vardiya öncesi detaylı iç ve dış temizliği yapılan bakımlı araç filosu.",
+      },
+      {
+        icon: "battery_charging_full",
+        title: "Yolcu Donanımları",
+        value: "Hızlı Telefon Şarjı",
+        desc: "Yolculuk esnasında Type-C / Lightning telefon şarj imkanı ve navigasyonlu rota takibi.",
+      },
+    ] as VehicleSpec[],
+  },
+
+  // 6. HİZMET VERİLEN TÜM İLÇE VE BÖLGELER
   regions: [
     "Onikişubat",
     "Dulkadiroğlu",
@@ -158,103 +207,7 @@ export const siteData = {
     "Adana",
   ],
 
-  // 6. POPÜLER GÜZERGAHLAR
-  routes: [
-    {
-      destination: "Şehir Merkezi (Trabzon Bulvarı)",
-      badge: "Merkez",
-      distance: "~8 km",
-      duration: "~12 dk",
-      description: "Oteller, valilik, çarşı, valilik ve kamu kurumlarına en hızlı ulaşım.",
-      queryText: "Şehir merkezi için taksi ayarlamak istiyorum.",
-    },
-    {
-      destination: "Onikişubat (Binevler / Yatılı Bölge)",
-      badge: "İlçe",
-      distance: "~11 km",
-      duration: "~15 dk",
-      description: "Boğaziçi, Üniversite, Necip Fazıl Kültür Merkezi ve konut bölgeleri.",
-      queryText: "Onikişubat bölgesi için taksi ayarlamak istiyorum.",
-    },
-    {
-      destination: "Dulkadiroğlu (Doğukent / Sanayi)",
-      badge: "İlçe",
-      distance: "~7 km",
-      duration: "~10 dk",
-      description: "Sanayi siteleri, Doğukent, Karacasu ve çevre yerleşimler.",
-      queryText: "Dulkadiroğlu bölgesi için taksi transferi rica ediyorum.",
-    },
-    {
-      destination: "Türkoğlu İlçesi & Lojistik Köy",
-      badge: "Sanayi & Lojistik",
-      distance: "~26 km",
-      duration: "~25 dk",
-      description: "Türkoğlu merkez, organize sanayi ve lojistik merkezine hızlı transfer.",
-      queryText: "Türkoğlu için havalimanı taksisi rica ediyorum.",
-    },
-    {
-      destination: "Pazarcık İlçe Merkezi",
-      badge: "İlçe Transferi",
-      distance: "~44 km",
-      duration: "~40 dk",
-      description: "Pazarcık merkez ve mahallelerine kapıdan kapıya doğrudan ulaşım.",
-      queryText: "Pazarcık transferi için araç ayarlamak istiyorum.",
-    },
-    {
-      destination: "Elbistan & Afşin (VIP Transfer)",
-      badge: "Kuzey İlçeler",
-      distance: "~150 km",
-      duration: "~1 sa 45 dk",
-      description: "Geniş bagajlı araçlarla konforlu ve güvenli uzun yol transferi.",
-      queryText: "Elbistan/Afşin için transfer ayarlamak istiyorum.",
-    },
-    {
-      destination: "Göksun İlçe Merkezi",
-      badge: "İlçe Transferi",
-      distance: "~90 km",
-      duration: "~1 sa 10 dk",
-      description: "Göksun ve tüneller güzergahında kesintisiz yolculuk.",
-      queryText: "Göksun transferi için taksi ayarlamak istiyorum.",
-    },
-    {
-      destination: "Gaziantep / Adana / Şehirlerarası",
-      badge: "Şehirlerarası VIP",
-      distance: "Bölgesel Hat",
-      duration: "Konforlu Filo",
-      description: "Havalimanından çevre illere kapıdan kapıya özel VIP şoförlü transfer.",
-      queryText: "Şehirlerarası transfer hizmeti için bilgi almak istiyorum.",
-    },
-  ] as RouteData[],
-
-  // 7. ARAÇ FİLOSU
-  fleet: [
-    {
-      type: "Standart Sarı Taksi",
-      badge: "En Çok Tercih Edilen",
-      capacity: "1 - 4 Kişi",
-      luggage: "2 - 3 Büyük Valiz",
-      features: ["Dijital Taksimetre", "Temassız POS Cihazı", "Klima", "Telefon Şarjı"],
-      desc: "Bireysel yolcular, çiftler ve hafif bagajlı seyahatler için ideal şehir içi ve havalimanı ulaşımı.",
-    },
-    {
-      type: "Geniş Bagajlı Aile Aracı",
-      badge: "Aile & Ağır Bagaj",
-      capacity: "1 - 4 Kişi",
-      luggage: "3 - 4 Büyük Valiz",
-      features: ["Ekstra Bagaj Alanı", "Çocuk Koltuğu (Talebe Göre)", "Klima", "Temassız Kart"],
-      desc: "Uçaktan birden fazla büyük bavul veya bebek arabasıyla inen aileler için ferah bagajlı konfor.",
-    },
-    {
-      type: "VIP Vito / Minibüs",
-      badge: "Grup & VIP Transfer",
-      capacity: "5 - 8 Kişi",
-      luggage: "6 - 8 Büyük Valiz",
-      features: ["Deri Koltuklar", "Geniş Diz Mesafesi", "VIP Şoför Hizmeti", "Şehirlerarası Özel Tahsis"],
-      desc: "Grup seyahatleri, heyetler ve Elbistan, Afşin, Göksun gibi çevre ilçelere özel konforlu transfer.",
-    },
-  ] as FleetItem[],
-
-  // 8. KULLANICI YORUMLARI
+  // 7. KULLANICI YORUMLARI
   reviews: [
     {
       author: "Ahmet Y.",
@@ -285,7 +238,7 @@ export const siteData = {
     },
   ] as ReviewItem[],
 
-  // 9. SIKÇA SORULAN SORULAR (FAQPage Schema için)
+  // 8. SIKÇA SORULAN SORULAR
   faqs: [
     {
       q: "Kahramanmaraş Havalimanında her zaman hazır taksi var mı?",
@@ -309,7 +262,7 @@ export const siteData = {
     },
   ] as FaqItem[],
 
-  // 10. AVANTAJLAR (Neden Biz)
+  // 9. AVANTAJLAR (Neden Biz)
   advantages: [
     {
       icon: "verified_user",

@@ -2,9 +2,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DirectionChoices from "@/components/DirectionChoices";
 import BookingForm from "@/components/BookingForm";
-import PopularRoutes from "@/components/PopularRoutes";
+import VehicleStandards from "@/components/VehicleStandards";
 import LocationSection from "@/components/LocationSection";
-import FleetSection from "@/components/FleetSection";
 import WhyUs from "@/components/WhyUs";
 import FlightAlertBanner from "@/components/FlightAlertBanner";
 import Reviews from "@/components/Reviews";
@@ -19,12 +18,12 @@ export default function HomePage() {
     <>
       <Header />
       <main className="flex flex-col relative w-full pt-20 sm:pt-24 pb-28 md:pb-16 bg-surface px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-1">
-        <div className="flex flex-col w-full gap-y-10 sm:gap-y-14">
-          {/* 1. Hero Section with Live Terminal Dispatch */}
+        <div className="flex flex-col w-full gap-y-10 sm:gap-y-12">
+          {/* 1. Hero Section */}
           <Hero />
 
-          {/* 2. Direction Choices & Quick Booking Form (Side-by-side on desktop) */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          {/* 2. REZERVASYON ALANI (Yukarı taşındı: Yön Seçimi & Hızlı Rezervasyon Formu) */}
+          <section id="rezervasyon-alani" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch scroll-mt-24">
             <div className="lg:col-span-5 h-full">
               <DirectionChoices />
             </div>
@@ -33,25 +32,22 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 3. Popular Transfer Routes (No fixed prices, but comprehensive destination info) */}
-          <PopularRoutes />
+          {/* 3. Araç Özellikleri & Kapasite Standartları (4 Kişi, Bagaj Hacmi, Donanımlar) */}
+          <VehicleStandards />
 
-          {/* 4. Terminal Location & 3-Step Walk Guide */}
+          {/* 4. Terminal Konumu & 3 Adımlı Karşılama Rehberi */}
           <LocationSection />
 
-          {/* 5. Vehicle Fleet & Capacity */}
-          <FleetSection />
-
-          {/* 6. Why Us / 6 Advantages */}
+          {/* 5. Neden Resmi Havalimanı Taksisi? (6 Temel Avantaj) */}
           <WhyUs />
 
-          {/* 7. Flight Alert Callout Banner */}
+          {/* 6. Uçuş Saati Kaçırmama Hatırlatma Banner'ı */}
           <FlightAlertBanner />
 
-          {/* 8. Verified Customer Reviews */}
+          {/* 7. Doğrulanmış Müşteri Yorumları & Puan */}
           <Reviews />
 
-          {/* 9. FAQ & Contact (Side-by-side on desktop) */}
+          {/* 8. SSS & İletişim Paneli */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <div className="lg:col-span-7 h-full">
               <FaqAccordion />
@@ -61,12 +57,12 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 10. Comprehensive Footer */}
+          {/* 9. Alt Bilgi (Footer) */}
           <Footer />
         </div>
       </main>
 
-      {/* Floating Action Bars */}
+      {/* Sabit İşlem Çubukları */}
       <BottomNav />
       <FloatingWhatsApp />
     </>
