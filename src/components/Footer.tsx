@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
 
       <div className="pt-6 border-t border-white/10 text-center">
-        <p className="text-sm text-white">© 2026 SiriusMenu. Tüm hakları saklıdır.</p>
+        <p className="text-sm text-white">© 2026 PaperShip Digital. Tüm hakları saklıdır.</p>
         <a
           href="https://papership.digital"
           target="_blank"
