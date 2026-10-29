@@ -1,20 +1,30 @@
 import React from "react";
 import { siteData } from "@/data/data";
+import type { FaqItem } from "@/data/data";
 
-export default function FaqAccordion() {
+export default function FaqAccordion({
+  faqs = siteData.faqs,
+  title = "Sıkça Sorulan Sorular",
+  headingLevel = "h2",
+}: {
+  faqs?: FaqItem[];
+  title?: string;
+  headingLevel?: "h2" | "h3";
+} = {}) {
+  const Heading = headingLevel;
   return (
-    <section id="sss" className="flex flex-col gap-4 scroll-mt-24 h-full">
+    <section className="flex flex-col gap-4 scroll-mt-24 h-full">
       <div className="px-1">
         <span className="text-xs uppercase tracking-wider text-primary font-extrabold">
           Merak Edilen Sorular
         </span>
-        <h2 className="text-xl sm:text-2xl font-bold text-on-surface">
-          Sıkça Sorulan Sorular
-        </h2>
+        <Heading className="text-xl sm:text-2xl font-bold text-on-surface">
+          {title}
+        </Heading>
       </div>
 
       <div className="flex flex-col gap-2.5 flex-1">
-        {siteData.faqs.map((faq, idx) => (
+        {faqs.map((faq, idx) => (
           <details
             key={idx}
             className="group p-4 rounded-2xl bg-surface-container-lowest shadow-sm border border-surface-container [&_summary::-webkit-details-marker]:none transition-all"

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { siteData } from "@/data/data";
 
 export default function BottomNav() {
@@ -36,17 +37,17 @@ export default function BottomNav() {
             </div>
           </a>
 
-          <a
+          <Link
             className="flex flex-col items-center justify-center h-13 min-h-[52px] rounded-xl bg-[#18181B] text-white font-bold px-2 active:scale-95 transition-all shadow-[0_8px_20px_-4px_rgba(24,24,27,0.35)]"
             data-path="durak-konumu"
-            href="#nerede"
+            href="/havalimani-rehberi"
             aria-label="Durak Konumu ve Yol Tarifi"
           >
             <div className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[20px]">location_on</span>
               <span className="text-xs sm:text-sm font-bold">Konum</span>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

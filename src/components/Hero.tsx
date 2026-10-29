@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative w-full rounded-3xl overflow-hidden shadow-2xl bg-inverse-surface text-inverse-on-surface">
       {/* Optimized Next.js Hero LCP Image */}
       <Image
-        src={siteData.seo.ogImage}
+        src={siteData.seo.heroImage}
         alt={`${siteData.brand.name} Terminal Girişi ve Sarı Taksi Bekleme Durağı`}
         priority
         fill

@@ -1,6 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { siteData } from "@/data/data";
+import { districts } from "@/data/districts";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -27,29 +33,20 @@ export const metadata: Metadata = {
     email: true,
   },
   alternates: {
-    canonical: siteData.seo.siteUrl,
+    canonical: "/",
   },
   openGraph: {
     title: siteData.seo.title,
     description: siteData.seo.description,
-    url: siteData.seo.siteUrl,
+    url: "/",
     siteName: siteData.brand.name,
     locale: "tr_TR",
     type: "website",
-    images: [
-      {
-        url: siteData.seo.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteData.brand.name,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteData.seo.title,
     description: siteData.seo.description,
-    images: [siteData.seo.ogImage],
   },
   robots: {
     index: true,
@@ -142,45 +139,21 @@ export default function RootLayout({
     ],
     hasMap: siteData.location.googleMapsLink,
     sameAs: [siteData.location.googleMapsLink],
-    areaServed: siteData.regions.map((region) => ({
+    areaServed: districts.map((d) => ({
       "@type": "Place",
-      name: `${region}, Kahramanmaraş`,
-    })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteData.seo.rating.ratingValue,
-      bestRating: siteData.seo.rating.bestRating,
-      worstRating: siteData.seo.rating.worstRating,
-      ratingCount: siteData.seo.rating.ratingCount,
-    },
-    review: siteData.reviews.map((rev) => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: rev.author,
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: String(rev.rating),
-        bestRating: "5",
-      },
-      reviewBody: rev.comment,
-      datePublished: rev.date,
+      name: d.kind === "ilce" ? `${d.name}, Kahramanmaraş` : d.name,
     })),
   };
 
-  // Schema.org Structured Data: FAQPage
-  const faqSchema = {
+  // Schema.org Structured Data: WebSite
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: siteData.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.a,
-      },
-    })),
+    "@type": "WebSite",
+    "@id": `${siteData.seo.siteUrl}/#website`,
+    name: siteData.brand.name,
+    url: siteData.seo.siteUrl,
+    inLanguage: "tr-TR",
+    publisher: { "@id": `${siteData.seo.siteUrl}/#taxiservice` },
   };
 
   return (
@@ -193,23 +166,19 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
-        {/* Structured Data: LocalBusiness & TaxiService */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        {/* Structured Data: FAQPage */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
+        <JsonLd data={localBusinessSchema} />
+        <JsonLd data={websiteSchema} />
       </head>
       <body className="bg-surface text-on-surface antialiased flex flex-col min-h-full selection:bg-primary-container selection:text-on-primary-fixed">
-        {children}
+        <Header />
+        <main className="flex flex-col relative w-full pt-20 sm:pt-24 pb-28 md:pb-16 bg-surface px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-1">
+          <div className="flex flex-col w-full gap-y-10 sm:gap-y-12">
+            {children}
+            <Footer />
+          </div>
+        </main>
+        <BottomNav />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

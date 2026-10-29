@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import { siteData } from "@/data/data";
+import { districts } from "@/data/districts";
 
 export default function Footer() {
   return (
@@ -28,20 +30,44 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Fast Links & Regions */}
-      <div className="flex flex-col gap-3">
-        <span className="text-xs font-bold text-surface-variant uppercase tracking-wider">
-          7/24 Kesintisiz Hizmet Verilen Bölgeler & İlçeler
-        </span>
-        <div className="flex flex-wrap gap-2">
-          {siteData.regions.map((region, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 rounded-lg bg-white/10 text-xs text-white/90 font-medium hover:bg-white/15 transition-colors"
-            >
-              {region}
-            </span>
-          ))}
+      {/* Sayfa linkleri ve transfer bölgeleri */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <nav aria-label="Alt Menü" className="flex flex-col gap-3">
+          <span className="text-xs font-bold text-surface-variant uppercase tracking-wider">
+            Sayfalar
+          </span>
+          <ul className="flex flex-col gap-1.5 text-sm">
+            {siteData.nav.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-white/80 hover:text-primary-container transition-colors">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/kvkk" className="text-white/80 hover:text-primary-container transition-colors">
+                KVKK Aydınlatma Metni
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="flex flex-col gap-3 md:col-span-2">
+          <span className="text-xs font-bold text-surface-variant uppercase tracking-wider">
+            7/24 Transfer Verilen İlçe ve Şehirler
+          </span>
+          <ul className="flex flex-wrap gap-2">
+            {districts.map((d) => (
+              <li key={d.slug}>
+                <Link
+                  href={`/transfer/${d.slug}`}
+                  className="inline-block px-3 py-1 rounded-lg bg-white/10 text-xs text-white/90 font-medium hover:bg-white/20 transition-colors"
+                >
+                  {d.name} Taksi
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

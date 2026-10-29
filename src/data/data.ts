@@ -11,15 +11,6 @@ export interface VehicleSpec {
   desc: string;
 }
 
-export interface ReviewItem {
-  author: string;
-  role: string;
-  rating: number;
-  category: string;
-  comment: string;
-  date: string;
-}
-
 export interface FaqItem {
   q: string;
   a: string;
@@ -32,7 +23,7 @@ export const siteData = {
     shortName: "KCM Havaalanı Taksi",
     title: "Taksi Karşılama",
     slogan: "Havaalanındaki Tek Resmi Taksi Durağı",
-    license: "DHMİ & Kahramanmaraş Büyükşehir Belediyesi UKOME Lisanslı",
+    license: "Kahramanmaraş Havaalanı Resmi Taksi Durağı",
     airportName: "Kahramanmaraş Havaalanı",
     airportIata: "KCM",
     airportIcao: "LTCN",
@@ -101,7 +92,7 @@ export const siteData = {
   seo: {
     siteUrl: "https://www.marashavaalanitaksi.com",
     title: "Kahramanmaraş Havaalanı Taksi | 7/24 Kesintisiz Resmi Havaalanı Transferi",
-    titleTemplate: "%s | Kahramanmaraş Havaalanı Resmi Taksi Durağı",
+    titleTemplate: "%s | Kahramanmaraş Havaalanı Taksi",
     description:
       "Kahramanmaraş Havaalanı (KCM) tek resmi ve lisanslı taksi durağı. Gelen yolcu çıkış kapısında 7/24 hazır taksiler. Onikişubat, Dulkadiroğlu, Türkoğlu, Pazarcık, Elbistan ve şehirlerarası sabit, güvenilir taksi transferi.",
     keywords: [
@@ -121,14 +112,11 @@ export const siteData = {
       "7 24 Havaalanı Taksi Maraş",
     ],
     themeColor: "#facc15",
-    ogImage:
+    // Sitemap için son içerik güncelleme tarihi
+    lastUpdated: "2026-10-29",
+    // Hero görseli (geçici: tasarım aracından gelen dış link, kendi fotoğrafımızla değiştirilmeli)
+    heroImage:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuB_lBQqkXjDCQ0tWWCLL7gL3SB4SXNvapr5-LBphTub7bTz3yFAybadOinQ9qiHQHiJ_57RjYtVsMCoEPfePa5Qrqn8MCe_IfFkUvVPJq8qh0x6UO6S4MsOcLuw6_1SFHpqnVNRF0LLoQ5ERw5N_w1nAogn4uLmGEtWlfrhoJixLdopVzA6sq3DvsIIuC6fkVs7NTUVhZHnEJJ98g0serWtsL8KaKoObGqXDyAr9pI_4G2JOyOXQclQ",
-    rating: {
-      ratingValue: "4.9",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "284",
-    },
   },
 
   // 5. ARAÇ ÖZELLİKLERİ VE KAPASİTE STANDARTLARI (Global Bilgilendirme)
@@ -172,8 +160,8 @@ export const siteData = {
       {
         icon: "speed",
         title: "Resmi Taksimetre",
-        value: "UKOME Onaylı & Mühürlü",
-        desc: "Sürpriz fiyat yok; Kahramanmaraş Büyükşehir Belediyesi resmi taksimetresi uygulanır.",
+        value: "Onaylı & Mühürlü",
+        desc: "Sürpriz fiyat yok; resmi taksimetre uygulanır.",
       },
       {
         icon: "sanitizer",
@@ -190,55 +178,7 @@ export const siteData = {
     ] as VehicleSpec[],
   },
 
-  // 6. HİZMET VERİLEN TÜM İLÇE VE BÖLGELER
-  regions: [
-    "Onikişubat",
-    "Dulkadiroğlu",
-    "Türkoğlu",
-    "Pazarcık",
-    "Elbistan",
-    "Afşin",
-    "Göksun",
-    "Andırın",
-    "Çağlayancerit",
-    "Ekinözü",
-    "Nurhak",
-    "Gaziantep",
-    "Adana",
-  ],
-
-  // 7. KULLANICI YORUMLARI
-  reviews: [
-    {
-      author: "Ahmet Y.",
-      role: "İstanbul Uçuşu Yolcusu",
-      rating: 5,
-      category: "Gece İnişi",
-      comment:
-        "“Uçağım gece 01:30'da indi, terminalden çıkar çıkmaz taksim kapıdaydı. Şoför bey çok kibar ve yardımseverdi. Hiç beklemedim.”",
-      date: "2025-01-14",
-    },
-    {
-      author: "Merve K.",
-      role: "İş İnsanı",
-      rating: 5,
-      category: "İş Seyahati / İlçe",
-      comment:
-        "“Elbistan'a gitmem gerekiyordu, önceden WhatsApp'tan görüştük. Tam vaktinde karşıladılar. Çok rahat ve konforlu bir yolculuktu.”",
-      date: "2025-02-02",
-    },
-    {
-      author: "Selim T.",
-      role: "Aile Yolcusu",
-      rating: 5,
-      category: "Aile Transferi",
-      comment:
-        "“Temassız kartla ödeme imkanı ve valizlerimizi yerleştirmedeki nezaketleri çok iyiydi. Kahramanmaraş'ın en kurumsal ve güvenilir durağı.”",
-      date: "2025-02-18",
-    },
-  ] as ReviewItem[],
-
-  // 8. SIKÇA SORULAN SORULAR
+  // 6. SIKÇA SORULAN SORULAR
   faqs: [
     {
       q: "Kahramanmaraş Havaalanında her zaman hazır taksi var mı?",
@@ -250,7 +190,7 @@ export const siteData = {
     },
     {
       q: "Taksi ücret tarifesi nasıl belirlenmektedir?",
-      a: "Tüm araçlarımızda Kahramanmaraş Büyükşehir Belediyesi UKOME resmi taksimetre tarifesi uygulanır. Sürpriz ek maliyet olmadan, şeffaf ve güvenilir taksimetre ile yolculuk yaparsınız. Çevre ilçe veya şehirlerarası transferler hakkında önceden bilgi almak için bize yazabilirsiniz.",
+      a: "Tüm araçlarımızda resmi taksimetre tarifesi uygulanır. Sürpriz ek maliyet olmadan, şeffaf ve güvenilir taksimetre ile yolculuk yaparsınız. Çevre ilçe veya şehirlerarası transferler hakkında önceden bilgi almak için bize yazabilirsiniz.",
     },
     {
       q: "Uçağım rötar yaparsa ne olur?",
@@ -260,9 +200,25 @@ export const siteData = {
       q: "Havaalanına gitmek için nasıl taksi çağırırım?",
       a: "Telefonla doğrudan 0344 235 46 46 numarasını arayabilir veya sitemizdeki hızlı rezervasyon formu / WhatsApp üzerinden adres ve saat bilgisi göndererek ön rezervasyon oluşturabilirsiniz. Şoförümüz tam vaktinde kapınızda olur.",
     },
+    {
+      q: "Araçta kredi kartı ile ödeme yapabilir miyim?",
+      a: "Evet. Tüm araçlarımızda temassız POS cihazı bulunur; nakit, banka kartı ve kredi kartı ile ödeme yapabilirsiniz.",
+    },
+    {
+      q: "Bir taksiye kaç kişi ve kaç valiz sığar?",
+      a: "Taksilerimiz yasal olarak en fazla 4 yolcu taşır. Bagajda 3-4 büyük boy valiz ile el çantaları rahatlıkla taşınır.",
+    },
+    {
+      q: "Çocuk veya bebek koltuğu talep edebilir miyim?",
+      a: "Evet. Rezervasyon sırasında belirtmeniz halinde bebek veya çocuk oto koltuğu hazır bulundurulur.",
+    },
+    {
+      q: "İlçelere ve başka şehirlere transfer yapıyor musunuz?",
+      a: "Evet. Havaalanından Kahramanmaraş'ın tüm ilçelerine, ayrıca Gaziantep ve Adana'ya kapıdan kapıya transfer yapıyoruz. Uzun mesafeler için önceden rezervasyon öneririz.",
+    },
   ] as FaqItem[],
 
-  // 9. AVANTAJLAR (Neden Biz)
+  // 7. AVANTAJLAR (Neden Biz)
   advantages: [
     {
       icon: "verified_user",
@@ -277,7 +233,7 @@ export const siteData = {
     {
       icon: "price_check",
       title: "Resmi Taksimetre",
-      desc: "Sürpriz ek maliyet yok. UKOME onaylı şeffaf taksimetre garantisi.",
+      desc: "Sürpriz ek maliyet yok. Şeffaf resmi taksimetre garantisi.",
     },
     {
       icon: "luggage",
@@ -294,5 +250,16 @@ export const siteData = {
       title: "Kartla Araçta Ödeme",
       desc: "Tüm araçlarımızda temassız kredi kartı ve banka kartı POS cihazı mevcuttur.",
     },
+  ],
+
+  // 8. SAYFA MENÜSÜ (Header, footer ve mobil menüde kullanılır)
+  nav: [
+    { href: "/rezervasyon", label: "Rezervasyon", icon: "calendar_month" },
+    { href: "/transfer", label: "Transfer Bölgeleri", icon: "route" },
+    { href: "/havalimani-rehberi", label: "Durak Nerede?", icon: "location_on" },
+    { href: "/arac-ozellikleri", label: "Araçlarımız", icon: "directions_car" },
+    { href: "/sss", label: "SSS", icon: "help_outline" },
+    { href: "/hakkimizda", label: "Hakkımızda", icon: "verified_user" },
+    { href: "/iletisim", label: "İletişim", icon: "contact_phone" },
   ],
 };

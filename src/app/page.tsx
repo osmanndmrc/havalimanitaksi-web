@@ -1,70 +1,77 @@
-import Header from "@/components/Header";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import DirectionChoices from "@/components/DirectionChoices";
 import BookingForm from "@/components/BookingForm";
-import VehicleStandards from "@/components/VehicleStandards";
-import LocationSection from "@/components/LocationSection";
 import WhyUs from "@/components/WhyUs";
+import DistrictGrid from "@/components/DistrictGrid";
 import FlightAlertBanner from "@/components/FlightAlertBanner";
-import Reviews from "@/components/Reviews";
 import FaqAccordion from "@/components/FaqAccordion";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { siteData } from "@/data/data";
 
 export default function HomePage() {
   return (
     <>
-      <Header />
-      <main className="flex flex-col relative w-full pt-20 sm:pt-24 pb-28 md:pb-16 bg-surface px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-1">
-        <div className="flex flex-col w-full gap-y-10 sm:gap-y-12">
-          {/* 1. Hero Section */}
-          <Hero />
+      {/* 1. Hero (sayfanın tek H1 başlığı burada) */}
+      <Hero />
 
-          {/* 2. REZERVASYON ALANI (Yukarı taşındı: Yön Seçimi & Hızlı Rezervasyon Formu) */}
-          <section id="rezervasyon-alani" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch scroll-mt-24">
-            <div className="lg:col-span-5 h-full">
-              <DirectionChoices />
-            </div>
-            <div className="lg:col-span-7 h-full">
-              <BookingForm />
-            </div>
-          </section>
-
-          {/* 3. Araç Özellikleri & Kapasite Standartları (4 Kişi, Bagaj Hacmi, Donanımlar) */}
-          <VehicleStandards />
-
-          {/* 4. Terminal Konumu & 3 Adımlı Karşılama Rehberi */}
-          <LocationSection />
-
-          {/* 5. Neden Resmi Havalimanı Taksisi? (6 Temel Avantaj) */}
-          <WhyUs />
-
-          {/* 6. Uçuş Saati Kaçırmama Hatırlatma Banner'ı */}
-          <FlightAlertBanner />
-
-          {/* 7. Doğrulanmış Müşteri Yorumları & Puan */}
-          <Reviews />
-
-          {/* 8. SSS & İletişim Paneli */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            <div className="lg:col-span-7 h-full">
-              <FaqAccordion />
-            </div>
-            <div className="lg:col-span-5 h-full">
-              <ContactSection />
-            </div>
-          </section>
-
-          {/* 9. Alt Bilgi (Footer) */}
-          <Footer />
+      {/* 2. Rezervasyon: yön seçimi ve hızlı form */}
+      <section id="rezervasyon-alani" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch scroll-mt-24">
+        <div className="lg:col-span-5 h-full">
+          <DirectionChoices />
         </div>
-      </main>
+        <div className="lg:col-span-7 h-full">
+          <BookingForm />
+        </div>
+      </section>
 
-      {/* Sabit İşlem Çubukları */}
-      <BottomNav />
-      <FloatingWhatsApp />
+      {/* 3. Transfer bölgeleri (ilçe sayfalarına bağlantılar) */}
+      <DistrictGrid />
+
+      {/* 4. Neden biz */}
+      <WhyUs />
+
+      {/* 5. Durak konumu kısa yönlendirme */}
+      <section className="rounded-3xl p-5 sm:p-8 bg-surface-container-lowest shadow-md border border-surface-container grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+        <div className="flex flex-col gap-2">
+          <span className="text-xs uppercase tracking-wider text-primary font-extrabold">
+            Kolay Buluşma Noktası
+          </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-on-surface">
+            Taksi durağı terminalde nerede?
+          </h2>
+          <p className="text-sm text-secondary leading-relaxed">
+            Durağımız gelen yolcu çıkış kapısının yaklaşık 15 metre karşısındadır.
+            Bagajınızı aldıktan sonra kapıdan çıkın, sarı taksiler sizi sırada bekliyor.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row md:justify-end gap-3">
+          <Link
+            href="/havalimani-rehberi"
+            className="h-12 px-5 rounded-xl bg-inverse-surface text-inverse-on-surface font-bold text-sm flex items-center justify-center gap-2 hover:bg-neutral-800 transition-all"
+          >
+            <span className="material-symbols-outlined text-[20px] text-primary-container">map</span>
+            Havalimanı Rehberi
+          </Link>
+          <Link
+            href="/arac-ozellikleri"
+            className="h-12 px-5 rounded-xl bg-surface-container text-on-surface font-bold text-sm flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all"
+          >
+            <span className="material-symbols-outlined text-[20px] text-primary">directions_car</span>
+            Araç Özellikleri
+          </Link>
+        </div>
+      </section>
+
+      {/* 6. Uçuş hatırlatma */}
+      <FlightAlertBanner />
+
+      {/* 7. Öne çıkan sorular */}
+      <div className="flex flex-col gap-3">
+        <FaqAccordion faqs={siteData.faqs.slice(0, 4)} title="Merak Edilen Sorular" />
+        <Link href="/sss" className="self-start px-1 text-sm font-bold text-primary hover:underline">
+          Tüm soruları gör →
+        </Link>
+      </div>
     </>
   );
 }

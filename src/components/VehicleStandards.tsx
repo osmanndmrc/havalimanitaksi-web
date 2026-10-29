@@ -21,7 +21,7 @@ export default function VehicleStandards() {
           </p>
         </div>
         <span className="text-xs text-secondary font-medium hidden sm:block self-start sm:self-auto">
-          DHMİ & UKOME Yönetmeliklerine Uygun
+          Yasal Mevzuata Uygun
         </span>
       </div>
 
